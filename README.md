@@ -50,5 +50,5 @@ Este é um projeto pessoal, mas sinta-se à vontade para clonar (`fork`) o repos
 git clone [https://github.com/DevZIKIII/DanielJacometo.git](https://github.com/DevZIKIII/DanielJacometo.git)
 ```
 
-### 👨‍💻 Autor
-Daniel Jacometo - @DevZIKIII
+### 👨‍💻 Autores
+- **Daniel José Dantas Jacometo** - [@DevZIKIII](https://github.com/DevZIKIII)
