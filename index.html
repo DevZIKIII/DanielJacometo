@@ -1,672 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="dark-theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel José Dantas Jacometo - Portfolio</title>
+    
+    <title>Daniel Jacometo (Dev_ZIKI) - Portfólio</title>
+    <meta name="description" content="Portfólio de Daniel Jacometo, Desenvolvedor Full Stack & Game Developer. Conheça meus projetos, habilidades e entre em contato.">
+    <meta name="author" content="Daniel Jacometo">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #8A2BE2;
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: #8A2BE2;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #8A2BE2;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #8A2BE2;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #8A2BE2, #DC143C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: #b0b0b0;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #8A2BE2, #DC143C);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 5rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #8A2BE2;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(135deg, #8A2BE2, #DC143C);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-images {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about-images img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #8A2BE2;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .about-images img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #c0c0c0;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: #1a1a1a;
-            border-radius: 15px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #333;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #8A2BE2, #DC143C);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #8A2BE2;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            color: #c0c0c0;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(138, 43, 226, 0.2);
-            color: #8A2BE2;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: #DC143C;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: #ff4757;
-            text-decoration: underline;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8A2BE2, #DC143C);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .contact-link {
-            color: #8A2BE2;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-link:hover {
-            color: #DC143C;
-        }
-
-        /* Footer */
-        .footer {
-            background: #0a0a0a;
-            text-align: center;
-            padding: 2rem 0;
-            color: #666;
-            border-top: 1px solid #333;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: rgba(18, 18, 18, 0.98);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem 0;
-                gap: 1rem;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section {
-                padding: 3rem 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .about-images {
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .about-images img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .about-images {
-                flex-direction: column;
-            }
-
-            .about-images img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .project-card {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #8A2BE2;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Dev_ZIKI</a>
+            <a href="#home" class="logo" aria-label="Voltar para o início">Dev_ZIKI</a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#experience" class="nav-link">Experiência</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projetos</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+                        <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+                    </button>
+                </li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content fade-in-up">
-            <h1>Daniel José Dantas Jacometo</h1>
-            <p class="subtitle">Desenvolvedor & Especialista em Cibersegurança</p>
-            <a href="#about" class="cta-button">Conheça meu trabalho</a>
-        </div>
-        <div class="scroll-indicator">↓</div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">Sobre Mim</h2>
-        <div class="about-content">
-            <div class="about-images">
-                <img src="kali.png" alt="Foto de Dev_ZIKI">
-                <img src="me.jpg" alt="Foto de Daniel José Dantas Jacometo">
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Daniel Jacometo</h1>
+                <p class="hero-alias"> Dev_ZIKI </p>
+                <p class="subtitle"><span id="typing-effect"></span></p>
+                <a href="#projects" class="cta-button">Conheça meus projetos</a>
             </div>
-            <div class="about-text">
-                <p>Olá, meu nome é <strong>Daniel José Dantas Jacometo</strong>, também conhecido pelo codinome <strong>Dev_ZIKI</strong>. Nascido em 31 de outubro de 2005, sou um entusiasta da tecnologia com uma paixão especial por cibersegurança.</p>
-                
-                <p>Desde 2020, estou envolvido na área de Análise e Desenvolvimento de Sistemas, onde desenvolvi diversas habilidades técnicas e um profundo interesse em proteger sistemas e informações.</p>
-                
-                <p>Atualmente, estou focado em estudar cibersegurança e testes de penetração (pen test). Tenho um ambiente dedicado para estudo, onde pratico e aprimoro minhas habilidades.</p>
-                
-                <p>Meu objetivo profissional é atuar na área de cibersegurança, contribuindo para a proteção de dados e sistemas contra ameaças cibernéticas.</p>
-            </div>
-        </div>
-    </section>
+            <a href="#about" class="scroll-indicator" aria-label="Rolar para a próxima seção">↓</a>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title">Principais Projetos</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 class="project-title">Site focado no aprendizado em Estrutura de dados</h3>
-                <p class="project-description">O site consiste em um meio divertido e prático de aprender sobre estrutura de dados, além de contar com uma funcionalidade como a gamificação no projeto.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">PHP</span>
-                </div>
-                <a href="https://github.com/KiraZiki/LearnProfit_V2" target="_blank" class="project-link">Ver no GitHub →</a>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-title">Projeto com variedade de assunto POO</h3>
-                <p class="project-description">Este foi um projeto desenvolvido em aula para cada assunto envolvido em Programação Orientada a Objetos (POO), explorando conceitos fundamentais da programação orientada a objetos.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">PHP</span>
-                </div>
-                <a href="https://github.com/KiraZiki/POO" target="_blank" class="project-link">Ver no GitHub →</a>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-title">XhopiV2</h3>
-                <p class="project-description">Um projeto inspirado na Shopee, desenvolvido para praticar conceitos de e-commerce e interface de usuário, implementando funcionalidades de uma plataforma de vendas online.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">PHP</span>
-                </div>
-                <a href="https://github.com/KiraZiki/xhopiV2" target="_blank" class="project-link">Ver no GitHub →</a>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-title">Perfil GitHub</h3>
-                <p class="project-description">Além destes projetos presentes no portfólio, existem outros projetos menores criados por mim com o simples objetivo de estudar linguagens diferentes ou testar funcionalidades. Explore meu perfil para ver mais trabalhos.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Diversos</span>
-                    <span class="tech-tag">Estudos</span>
-                    <span class="tech-tag">Experimentos</span>
-                </div>
-                <a href="https://github.com/KiraZiki" target="_blank" class="project-link">Ver Perfil Completo →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Contato</h2>
-        <div class="contact-content">
-            <p>Interessado em colaborar ou discutir oportunidades? Entre em contato comigo!</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <a href="mailto:marciojjacometo@gmail.com" class="contact-link">marciojjacometo@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">⚡</div>
-                    <a href="https://github.com/DevZIKIII" target="_blank" class="contact-link">GitHub: DevZIKIII</a>
+        <section id="about" class="section">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-images"><img src="daniel.jpeg" alt="Foto de Daniel Jacometo"></div>
+                <div class="about-text">
+                    <p>Olá! Sou <strong>Daniel Jacometo</strong>, um desenvolvedor movido pela paixão de transformar ideias em realidade, seja na web ou em jogos. Cursando <strong>Análise e Desenvolvimento de Sistemas</strong> na FATEC, busco constantemente desafios que expandam meu conhecimento.</p>
+                    <p>Minha jornada na tecnologia é focada em criar soluções eficientes, com um forte interesse em desenvolvimento Full Stack e Game Development.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experiência e Formação</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-content">
+                        <h3>Análise e Desenvolvimento de Sistemas - FATEC</h3>
+                        <p class="timeline-date">2024 - 2025 (Previsto)</p>
+                        <p>Foco em desenvolvimento de software, banco de dados e engenharia de sistemas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-content">
+                        <h3>Desenvolvedor do Projeto Tsukuyomi</h3>
+                        <p class="timeline-date">2023 - Presente</p>
+                        <p>Desenvolvimento colaborativo de um e-commerce full-stack, aplicando conceitos de PHP, MySQL e JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="devicon-html5-plain-wordmark"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="devicon-css3-plain-wordmark"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="devicon-php-plain"></i><span>PHP</span></div>
+                <div class="skill-card"><i class="devicon-mysql-plain-wordmark"></i><span>MySQL</span></div>
+                <div class="skill-card"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+                <div class="skill-card"><i class="devicon-react-original-wordmark"></i><span>React</span></div>
+                <div class="skill-card"><i class="devicon-godot-plain-wordmark"></i><span>Godot Engine</span></div>
+                <div class="skill-card"><i class="devicon-git-plain-wordmark"></i><span>Git</span></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Principais Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">🛒 E-commerce "Tsukuyomi"</h3>
+                    <p class="project-description">Um e-commerce com tema geek, construído para demonstrar habilidades de desenvolvimento web full-stack.</p>
+                    <div class="project-tech"><span class="tech-tag">PHP</span><span class="tech-tag">JavaScript</span><span class="tech-tag">MySQL</span></div>
+                    <div class="project-links"><a href="#" target="_blank" class="project-link online">Ver Online →</a><a href="https://github.com/DevZIKIII/Tsukuyomi" target="_blank" class="project-link">GitHub →</a></div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">🤖 ChatBot para Devs</h3>
+                    <p class="project-description">Assistente para programadores utilizando a API do Gemini, focado em otimizar o fluxo de trabalho e responder a dúvidas.</p>
+                    <div class="project-tech"><span class="tech-tag">API Gemini</span><span class="tech-tag">Node.js</span></div>
+                    <div class="project-links"><a href="#" target="_blank" class="project-link online">Ver Online →</a><a href="https://github.com/DevZIKIII/ChatbotDevSafe" target="_blank" class="project-link">GitHub →</a></div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">🎨 Este Portfólio</h3>
+                    <p class="project-description">O site que você está vendo! Desenvolvido do zero para ser meu cartão de visitas digital, com design moderno e responsivo.</p>
+                    <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+                    <div class="project-links"><a href="https://github.com/DevZIKIII/DanielJacometo" target="_blank" class="project-link">Ver o Código →</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <div class="contact-content">
+                <p>Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me enviar uma mensagem!</p>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="text" name="name" placeholder="Seu nome" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                    <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                </form>
+                <div id="form-status"></div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <p>&copy; 2024 Daniel José Dantas Jacometo. Todos os direitos reservados.</p>
+        <div class="footer-socials">
+            <a href="https://github.com/DevZIKIII" target="_blank" aria-label="GitHub"><i class="devicon-github-original"></i></a>
+            <a href="https://www.linkedin.com/in/devziki/" target="_blank" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+            <a href="https://www.instagram.com/dev_ziki/" target="_blank" aria-label="Instagram"><i class="devicon-instagram-original"></i></a>
+        </div>
+        <p>&copy; 2024 Daniel "Dev_ZIKI" Jacometo. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+    <a href="#home" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">↑</a>
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(18, 18, 18, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(18, 18, 18, 0.95)';
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections for animations
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
