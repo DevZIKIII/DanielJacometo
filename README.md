@@ -47,7 +47,7 @@ Este é um projeto pessoal, mas sinta-se à vontade para clonar (`fork`) o repos
 
 ```bash
 # Clone este repositório
-git clone [https://github.com/DevZIKIII/DanielJacometo.git](https://github.com/DevZIKIII/DanielJacometo.git)
+git clone https://github.com/DevZIKIII/DanielJacometo.git
 ```
 
 ### 👨‍💻 Autores
