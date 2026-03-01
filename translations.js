@@ -99,7 +99,7 @@ const translations = {
 
         // Contact
         contact_title: "Vamos Conversar?",
-        contact_desc: "Estou sempre aberto a novas oportunidades, colaborações e projetos interessantes. Se você tem uma ideia, um projeto ou só quer trocar uma ideia sobre tecnologia e jogos — manda a mensagem!",
+        contact_desc: "Estou sempre aberto a novas oportunidades, colaborações e projetos interessantes. Se você tem uma ideia, um projeto ou só quer trocar uma ideia sobre tecnologia e jogos!",
         contact_name: "Seu nome",
         contact_email: "Seu e-mail",
         contact_message: "Sua mensagem",
@@ -198,7 +198,7 @@ const translations = {
         lang_fr_level: "Basic",
 
         contact_title: "Let's Talk?",
-        contact_desc: "I'm always open to new opportunities, collaborations, and interesting projects. If you have an idea, a project, or just want to chat about tech and games — send me a message!",
+        contact_desc: "I'm always open to new opportunities, collaborations, and interesting projects. If you have an idea, a project, or just want to chat about tech and games!",
         contact_name: "Your name",
         contact_email: "Your email",
         contact_message: "Your message",
@@ -296,7 +296,7 @@ const translations = {
         lang_fr_level: "Básico",
 
         contact_title: "¿Hablamos?",
-        contact_desc: "Siempre estoy abierto a nuevas oportunidades, colaboraciones y proyectos interesantes. Si tienes una idea, un proyecto o solo quieres charlar sobre tecnología y juegos — ¡envíame un mensaje!",
+        contact_desc: "Siempre estoy abierto a nuevas oportunidades, colaboraciones y proyectos interesantes. Si tienes una idea, un proyecto o solo quieres charlar sobre tecnología y juegos!",
         contact_name: "Tu nombre",
         contact_email: "Tu email",
         contact_message: "Tu mensaje",
@@ -394,7 +394,7 @@ const translations = {
         lang_fr_level: "Basique",
 
         contact_title: "On discute ?",
-        contact_desc: "Je suis toujours ouvert à de nouvelles opportunités, collaborations et projets intéressants. Si vous avez une idée, un projet ou si vous voulez simplement discuter de tech et de jeux — envoyez-moi un message !",
+        contact_desc: "Je suis toujours ouvert à de nouvelles opportunités, collaborations et projets intéressants. Si vous avez une idée, un projet ou si vous voulez simplement discuter de tech et de jeux !",
         contact_name: "Votre nom",
         contact_email: "Votre email",
         contact_message: "Votre message",
@@ -492,7 +492,7 @@ const translations = {
         lang_fr_level: "Base",
 
         contact_title: "Parliamo?",
-        contact_desc: "Sono sempre aperto a nuove opportunità, collaborazioni e progetti interessanti. Se hai un'idea, un progetto o vuoi semplicemente parlare di tecnologia e giochi — inviami un messaggio!",
+        contact_desc: "Sono sempre aperto a nuove opportunità, collaborazioni e progetti interessanti. Se hai un'idea, un progetto o vuoi semplicemente parlare di tecnologia e giochi!",
         contact_name: "Il tuo nome",
         contact_email: "La tua email",
         contact_message: "Il tuo messaggio",
