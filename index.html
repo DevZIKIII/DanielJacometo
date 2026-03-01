@@ -1,155 +1,447 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="dark-theme">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Daniel Jacometo (Dev_ZIKI) - Portfólio</title>
-    <meta name="description" content="Portfólio de Daniel Jacometo, Desenvolvedor Full Stack & Game Developer. Conheça meus projetos, habilidades e entre em contato.">
+
+    <title>Daniel Jacometo (Dev_ZIKI) — Full Stack & Game Developer</title>
+    <meta name="description"
+        content="Portfolio de Daniel Jacometo (Dev_ZIKI) — Desenvolvedor Full Stack & Game Developer de Presidente Prudente, SP. Projetos web, jogos e soluções digitais.">
     <meta name="author" content="Daniel Jacometo">
+    <meta name="keywords"
+        content="desenvolvedor, full stack, game developer, web, jogos, portfolio, Daniel Jacometo, Dev ZIKI">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <nav class="navbar">
+    <!-- Animated Background Grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Voltar para o início">Dev_ZIKI</a>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">Sobre</a></li>
-                <li><a href="#experience" class="nav-link">Experiência</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projetos</a></li>
-                <li><a href="#contact" class="nav-link">Contato</a></li>
+            <a href="#home" class="logo" aria-label="Voltar para o início">
+                <span class="logo-bracket">&lt;</span>Dev_ZIKI<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link" data-i18n="nav_about">Sobre</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experiência</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projetos</a></li>
+                <li><a href="#languages" class="nav-link" data-i18n="nav_languages">Idiomas</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contato</a></li>
+                <li>
+                    <!-- Language Selector -->
+                    <div class="lang-selector" id="lang-selector">
+                        <button class="lang-selector-btn" id="lang-selector-btn" aria-label="Selecionar idioma">
+                            <span class="lang-current-flag" id="lang-current-flag">🇧🇷</span>
+                            <span class="lang-arrow">▾</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <button class="lang-option" data-lang="pt" data-flag="🇧🇷">🇧🇷 Português</button>
+                            <button class="lang-option" data-lang="en" data-flag="🇬🇧">🇬🇧 English</button>
+                            <button class="lang-option" data-lang="es" data-flag="🇪🇸">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang="fr" data-flag="🇫🇷">🇫🇷 Français</button>
+                            <button class="lang-option" data-lang="it" data-flag="🇮🇹">🇮🇹 Italiano</button>
+                        </div>
+                    </div>
+                </li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
                         <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
                     </button>
                 </li>
             </ul>
-            <div class="hamburger"><span></span><span></span><span></span></div>
+            <div class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </nav>
 
     <main>
+        <!-- ==================== HERO ==================== -->
         <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Daniel Jacometo</h1>
-                <p class="hero-alias"> Dev_ZIKI </p>
-                <p class="subtitle"><span id="typing-effect"></span></p>
-                <a href="#projects" class="cta-button">Conheça meus projetos</a>
+            <div class="hero-particles" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
             </div>
-            <a href="#about" class="scroll-indicator" aria-label="Rolar para a próxima seção">↓</a>
+            <div class="hero-content">
+                <p class="hero-greeting" data-i18n="hero_greeting">Olá, eu sou</p>
+                <h1 class="hero-title">Daniel Jacometo</h1>
+                <p class="hero-alias">&lt; Dev_ZIKI /&gt;</p>
+                <p class="subtitle"><span id="typing-effect"></span></p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-button primary" id="hero-cta-projects">
+                        <span class="btn-icon">🚀</span> <span data-i18n="hero_cta_projects">Ver Projetos</span>
+                    </a>
+                    <a href="curriculo.pdf" download class="cta-button secondary" id="cv-btn">
+                        <span class="btn-icon">📄</span> <span data-i18n="hero_cta_cv">Download CV</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#about" class="scroll-indicator" aria-label="Rolar para a próxima seção">
+                <span class="scroll-arrow"></span>
+            </a>
         </section>
 
+        <!-- ==================== ABOUT ==================== -->
         <section id="about" class="section">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" data-i18n="about_title">Sobre Mim</h2>
             <div class="about-content">
-                <div class="about-images"><img src="daniel.jpeg" alt="Foto de Daniel Jacometo"></div>
+                <div class="about-images">
+                    <img src="daniel.jpeg" alt="Foto de Daniel Jacometo" loading="lazy">
+                    <div class="about-image-ring" aria-hidden="true"></div>
+                </div>
                 <div class="about-text">
-                    <p>Olá! Sou <strong>Daniel Jacometo</strong>, um desenvolvedor movido pela paixão de transformar ideias em realidade, seja na web ou em jogos. Cursando <strong>Análise e Desenvolvimento de Sistemas</strong> na FATEC, busco constantemente desafios que expandam meu conhecimento.</p>
-                    <p>Minha jornada na tecnologia é focada em criar soluções eficientes, com um forte interesse em desenvolvimento Full Stack e Game Development.</p>
+                    <p data-i18n-html="about_p1">
+                        Olá! Sou <strong>Daniel Jacometo</strong>, mas pode me chamar de <strong>Dev_ZIKI</strong>.
+                        Tenho <span class="highlight">nascido em 2005</span> e sou de <span class="highlight">Presidente
+                            Prudente, SP</span>.
+                        Sou <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> pela FATEC.
+                    </p>
+                    <p data-i18n-html="about_p2">
+                        Desde pequeno sou entusiasta em programação de jogos, e com o tempo essa paixão se expandiu para
+                        o
+                        <strong>desenvolvimento web Full Stack</strong>. Hoje, vivo uma dualidade entre essas duas áreas
+                        que amo
+                        com a mesma intensidade — criar experiências digitais incríveis, seja um jogo imersivo ou uma
+                        aplicação web robusta,
+                        é o que me move. Também sou apaixonado por <strong>desenvolvimento mobile</strong>.
+                    </p>
+                    <p data-i18n-html="about_p3">
+                        Quando não estou programando, você pode me encontrar em partidas de <strong>FPS</strong> e
+                        <strong>MOBA</strong>,
+                        sempre pensando em como aquelas mecânicas e sistemas poderiam ser reproduzidos com código.
+                    </p>
+                    <div class="about-tags">
+                        <span class="about-tag" data-i18n="about_tag1">🎮 Game Dev</span>
+                        <span class="about-tag" data-i18n="about_tag2">🌐 Full Stack</span>
+                        <span class="about-tag" data-i18n="about_tag3">📱 Mobile</span>
+                        <span class="about-tag" data-i18n="about_tag4">🎯 FPS & MOBA</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ==================== STATS ==================== -->
+        <section id="stats" class="section stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label" data-i18n="stat_projects">Projetos Concluídos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="14">0</span>
+                    <span class="stat-label" data-i18n="stat_techs">Tecnologias</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label" data-i18n="stat_langs">Idiomas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="3" data-suffix="+">0</span>
+                    <span class="stat-label" data-i18n="stat_years">Anos Codando</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE ==================== -->
         <section id="experience" class="section">
-            <h2 class="section-title">Experiência e Formação</h2>
+            <h2 class="section-title" data-i18n="exp_title">Experiência & Formação</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-line" aria-hidden="true"></div>
+
+                <div class="timeline-item" data-delay="0">
                     <div class="timeline-icon">🎓</div>
                     <div class="timeline-content">
-                        <h3>Análise e Desenvolvimento de Sistemas - FATEC</h3>
-                        <p class="timeline-date">2024 - 2025 (Concluído)</p>
-                        <p>Foco em desenvolvimento de software, banco de dados e engenharia de sistemas.</p>
+                        <span class="timeline-date" data-i18n="exp1_date">2024 — 2025</span>
+                        <h3 data-i18n="exp1_title">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                        <p class="timeline-place" data-i18n="exp1_place">FATEC — Faculdade de Tecnologia</p>
+                        <p data-i18n-html="exp1_desc">Formação completa com foco em desenvolvimento de software, banco
+                            de dados, engenharia de sistemas e metodologias ágeis. <strong>Concluído.</strong></p>
                     </div>
                 </div>
-                <div class="timeline-item">
+
+                <div class="timeline-item" data-delay="1">
+                    <div class="timeline-icon">🎮</div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-i18n="exp2_date">2025</span>
+                        <h3 data-i18n="exp2_title">Freelance — Jogo Escape Room</h3>
+                        <p class="timeline-place" data-i18n="exp2_place">Multimídia Educacional</p>
+                        <p data-i18n-html="exp2_desc">Desenvolvimento de um jogo Escape Room educacional em
+                            <strong>JavaScript puro</strong> para uma empresa local, aplicando lógica de game design,
+                            interatividade e storytelling.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-delay="2">
                     <div class="timeline-icon">🚀</div>
                     <div class="timeline-content">
-                        <h3>Desenvolvedor do Projeto Tsukuyomi</h3>
-                        <p class="timeline-date">2025 (Concluído)</p>
-                        <p>Desenvolvimento colaborativo de um e-commerce full-stack, aplicando conceitos de PHP, MySQL e JavaScript.</p>
+                        <span class="timeline-date" data-i18n="exp3_date">2025</span>
+                        <h3 data-i18n="exp3_title">Desenvolvedor do Projeto Tsukuyomi</h3>
+                        <p class="timeline-place" data-i18n="exp3_place">Projeto Acadêmico Colaborativo</p>
+                        <p data-i18n-html="exp3_desc">Desenvolvimento colaborativo de um e-commerce full-stack com tema
+                            geek, aplicando conceitos de <strong>PHP, MySQL e JavaScript</strong> em um ambiente de
+                            equipe.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ==================== SKILLS ==================== -->
         <section id="skills" class="section">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><i class="devicon-html5-plain-wordmark"></i><span>HTML5</span></div>
-                <div class="skill-card"><i class="devicon-css3-plain-wordmark"></i><span>CSS3</span></div>
-                <div class="skill-card"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
-                <div class="skill-card"><i class="devicon-php-plain"></i><span>PHP</span></div>
-                <div class="skill-card"><i class="devicon-mysql-plain-wordmark"></i><span>MySQL</span></div>
-                <div class="skill-card"><i class="devicon-postgresql-plain-wordmark"></i><span>PostgreSQL</span></div>
-                <div class="skill-card"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
-                <div class="skill-card"><i class="devicon-react-original-wordmark"></i><span>React</span></div>
-                <div class="skill-card"><i class="devicon-react-original-wordmark"></i><span>React Native</span></div>
-                <div class="skill-card"><i class="devicon-nextjs-plain-wordmark"></i><span>Next.js</span></div>
-                <div class="skill-card"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
-                <div class="skill-card"><i class="devicon-unity-original-wordmark"></i><span>Unity</span></div>
-                <div class="skill-card"><i class="devicon-godot-plain-wordmark"></i><span>Godot Engine</span></div>
-                <div class="skill-card"><i class="devicon-git-plain-wordmark"></i><span>Git</span></div>
+            <h2 class="section-title" data-i18n="skills_title">Habilidades Técnicas</h2>
+
+            <div class="skills-category">
+                <h3 class="category-title"><span class="category-icon">🌐</span> <span
+                        data-i18n="skills_cat_frontend">Frontend</span></h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-html5-plain-wordmark"></i><span>HTML5</span></div>
+                    <div class="skill-card"><i class="devicon-css3-plain-wordmark"></i><span>CSS3</span></div>
+                    <div class="skill-card"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                    <div class="skill-card"><i class="devicon-react-original-wordmark"></i><span>React</span></div>
+                    <div class="skill-card"><i class="devicon-react-original-wordmark"></i><span>React Native</span>
+                    </div>
+                    <div class="skill-card"><i class="devicon-nextjs-plain-wordmark"></i><span>Next.js</span></div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title"><span class="category-icon">⚙️</span> <span
+                        data-i18n="skills_cat_backend">Backend & Database</span></h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+                    <div class="skill-card"><i class="devicon-php-plain"></i><span>PHP</span></div>
+                    <div class="skill-card"><i class="devicon-mysql-plain-wordmark"></i><span>MySQL</span></div>
+                    <div class="skill-card"><i class="devicon-postgresql-plain-wordmark"></i><span>PostgreSQL</span>
+                    </div>
+                    <div class="skill-card"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title"><span class="category-icon">🎮</span> <span
+                        data-i18n="skills_cat_gamedev">Game Development</span></h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-unity-original-wordmark"></i><span>Unity</span></div>
+                    <div class="skill-card"><i class="devicon-godot-plain-wordmark"></i><span>Godot Engine</span></div>
+                    <div class="skill-card game-maker-card"><span class="gm-icon">GM</span><span>GameMaker</span></div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title"><span class="category-icon">🔧</span> <span
+                        data-i18n="skills_cat_tools">Ferramentas</span></h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-git-plain-wordmark"></i><span>Git</span></div>
+                    <div class="skill-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                </div>
             </div>
         </section>
 
+        <!-- ==================== PROJECTS ==================== -->
         <section id="projects" class="section">
-            <h2 class="section-title">Principais Projetos</h2>
+            <h2 class="section-title" data-i18n="projects_title">Principais Projetos</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3 class="project-title">🛒 E-commerce "Tsukuyomi"</h3>
-                    <p class="project-description">Um e-commerce com tema geek, construído para demonstrar habilidades de desenvolvimento web full-stack.</p>
-                    <div class="project-tech"><span class="tech-tag">PHP</span><span class="tech-tag">JavaScript</span><span class="tech-tag">MySQL</span></div>
-                    <div class="project-links"><a href="http://tsukuyomi-store.vercel.app" target="none" class="project-link online">Ver Online →</a></div>
+
+                <div class="project-card" data-delay="0">
+                    <div class="project-card-header">
+                        <span class="project-icon">🛒</span>
+                        <div class="project-type" data-i18n="proj1_type">Web Full Stack</div>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj1_title">E-commerce "Tsukuyomi"</h3>
+                    <p class="project-description" data-i18n="proj1_desc">E-commerce completo com tema geek/anime,
+                        construído para demonstrar habilidades de desenvolvimento web full-stack. Inclui sistema de
+                        catálogo, carrinho de compras e interface responsiva.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://tsukuyomi-store.vercel.app" target="_blank" class="project-link online"
+                            data-i18n="proj1_link">🌐 Ver Online</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3 class="project-title">🤖 ChatBot para Devs</h3>
-                    <p class="project-description">Assistente para programadores utilizando a API do Gemini, focado em otimizar o fluxo de trabalho e responder a dúvidas.</p>
-                    <div class="project-tech"><span class="tech-tag">API Gemini</span><span class="tech-tag">Node.js</span></div>
-                    <div class="project-links"><a href="https://github.com/DevZIKIII/ChatbotDevSafe" target="_blank" class="project-link">GitHub →</a></div>
+
+                <div class="project-card" data-delay="1">
+                    <div class="project-card-header">
+                        <span class="project-icon">💡</span>
+                        <div class="project-type" data-i18n="proj2_type">Web App</div>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj2_title">IdeaHUB</h3>
+                    <p class="project-description" data-i18n="proj2_desc">Plataforma de gerenciamento de projetos e
+                        ideias 100% autoral. Conta com Kanban board interativo, Mind Map para brainstorming e interface
+                        intuitiva para organização criativa.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">UI/UX</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="project-link online" data-i18n="proj2_link">🌐 Ver Online</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3 class="project-title">🤖 IA Libras</h3>
-                    <p class="project-description">Inteligência artificial inovadora que interpreta sinais de Libras através de mapeamento de mão, demonstrando expertise em machine learning e aplicações sociais de tecnologia para acessibilidade e inclusão.</p>
-                    <div class="project-tech"><span class="tech-tag">Machine Learning</span><span class="tech-tag">Python</span><span class="tech-tag">Mapeamento de Mão</span></div>
-                    <div class="project-links"><a href="https://github.com/DevZIKIII/IALibras" target="_blank" class="project-link">GitHub →</a></div>
+
+                <div class="project-card" data-delay="2">
+                    <div class="project-card-header">
+                        <span class="project-icon">🤖</span>
+                        <div class="project-type" data-i18n="proj3_type">IA & Backend</div>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj3_title">ChatBot para Devs</h3>
+                    <p class="project-description" data-i18n="proj3_desc">Assistente inteligente para programadores
+                        utilizando a API do Gemini. Focado em otimizar o fluxo de trabalho, resolver dúvidas técnicas e
+                        auxiliar no desenvolvimento com IA generativa.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">API Gemini</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/DevZIKIII/ChatbotDevSafe" target="_blank"
+                            class="project-link github" data-i18n="proj3_link">⚡ GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-delay="3">
+                    <div class="project-card-header">
+                        <span class="project-icon">🤟</span>
+                        <div class="project-type" data-i18n="proj4_type">Machine Learning</div>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj4_title">IA Libras</h3>
+                    <p class="project-description" data-i18n="proj4_desc">Inteligência artificial inovadora que
+                        interpreta sinais de Libras através de mapeamento de mão em tempo real. Projeto com impacto
+                        social, promovendo acessibilidade e inclusão digital.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/DevZIKIII/IALibras" target="_blank" class="project-link github"
+                            data-i18n="proj4_link">⚡ GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== LANGUAGES ==================== -->
+        <section id="languages" class="section">
+            <h2 class="section-title" data-i18n="languages_title">Idiomas</h2>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <div class="lang-header">
+                        <span class="lang-flag">🇧🇷</span>
+                        <div>
+                            <h3 class="lang-name" data-i18n="lang_pt">Português</h3>
+                            <span class="lang-level" data-i18n="lang_pt_level">Nativo</span>
+                        </div>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" data-level="100"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="lang-header">
+                        <span class="lang-flag">🤟</span>
+                        <div>
+                            <h3 class="lang-name" data-i18n="lang_libras">Libras</h3>
+                            <span class="lang-level" data-i18n="lang_libras_level">Avançado</span>
+                        </div>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" data-level="85"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="lang-header">
+                        <span class="lang-flag">🇬🇧</span>
+                        <div>
+                            <h3 class="lang-name" data-i18n="lang_en">Inglês</h3>
+                            <span class="lang-level" data-i18n="lang_en_level">Intermediário</span>
+                        </div>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" data-level="55"></div>
+                    </div>
+                </div>
+                <div class="language-card">
+                    <div class="lang-header">
+                        <span class="lang-flag">🇫🇷</span>
+                        <div>
+                            <h3 class="lang-name" data-i18n="lang_fr">Francês</h3>
+                            <span class="lang-level" data-i18n="lang_fr_level">Básico</span>
+                        </div>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" data-level="25"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ==================== CONTACT ==================== -->
         <section id="contact" class="section">
-            <h2 class="section-title">Vamos Conversar?</h2>
+            <h2 class="section-title" data-i18n="contact_title">Vamos Conversar?</h2>
             <div class="contact-content">
-                <p>Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me enviar uma mensagem!</p>
+                <p data-i18n="contact_desc">Estou sempre aberto a novas oportunidades, colaborações e projetos
+                    interessantes. Se você tem uma ideia, um projeto ou só quer trocar uma ideia sobre tecnologia e
+                    jogos — manda a mensagem!</p>
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="text" name="name" placeholder="Seu nome" required>
-                    <input type="email" name="email" placeholder="Seu e-mail" required>
-                    <textarea name="message" placeholder="Sua mensagem" required></textarea>
-                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    <div class="form-row">
+                        <input type="text" name="name" data-i18n-placeholder="contact_name" placeholder="Seu nome"
+                            required id="form-name">
+                        <input type="email" name="email" data-i18n-placeholder="contact_email" placeholder="Seu e-mail"
+                            required id="form-email">
+                    </div>
+                    <textarea name="message" data-i18n-placeholder="contact_message" placeholder="Sua mensagem" required
+                        id="form-message"></textarea>
+                    <button type="submit" class="cta-button primary" id="form-submit">
+                        <span class="btn-icon">✉️</span> <span data-i18n="contact_send">Enviar Mensagem</span>
+                    </button>
                 </form>
                 <div id="form-status"></div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-socials">
-            <a href="https://github.com/DevZIKIII" target="_blank" aria-label="GitHub"><i class="devicon-github-original"></i></a>
-            <a href="https://www.linkedin.com/in/devziki/" target="_blank" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
-            <a href="https://www.instagram.com/dev_ziki/" target="_blank" aria-label="Instagram"><i class="devicon-instagram-original"></i></a>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://github.com/DevZIKIII" target="_blank" aria-label="GitHub"><i
+                        class="devicon-github-original"></i></a>
+                <a href="https://www.linkedin.com/in/devziki/" target="_blank" aria-label="LinkedIn"><i
+                        class="devicon-linkedin-plain"></i></a>
+                <a href="https://www.instagram.com/dev_ziki/" target="_blank" aria-label="Instagram"><i
+                        class="devicon-instagram-original"></i></a>
+            </div>
+            <p class="footer-text">
+                <span class="footer-code">&lt;</span> <span data-i18n="footer_made">Feito com 💜 por</span>
+                <strong>Dev_ZIKI</strong> <span class="footer-code">/&gt;</span>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Daniel "Dev_ZIKI" Jacometo. <span data-i18n="footer_rights">Todos os
+                    direitos reservados.</span></p>
         </div>
-        <p>&copy; 2024 Daniel "Dev_ZIKI" Jacometo. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Back to top -->
     <a href="#home" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">↑</a>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
